@@ -17,7 +17,7 @@ void init(GraphType *g){
     }
 }
 
-void insert_vertex(GraphType *g, int v){
+void insert_vertex(GraphType *g){
     if((g->n)+1>MAX_VERTICES){
         printf("그래프: 정점의 개수 초과");
         return;
@@ -48,7 +48,7 @@ void main(){
     g = (GraphType*)malloc(sizeof(GraphType));
     init(g);
     for(int i=0; i<4; i++){
-        insert_vertex(g,i);
+        insert_vertex(g);
     }
     insert_edge(g,0,1);
     insert_edge(g,0,2);
