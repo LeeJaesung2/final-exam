@@ -41,7 +41,7 @@ element delete_max_heap(HeapType *h){
     child = 2;
     printf("1");
     while(child<=h->heap_size){
-        if((child<h->heap_size) && (h->heap[child].key)<(h->heap[child+1].key)){
+        if((child<h->heap_size) && (h->heap[child].key)<(h->heap[child+1].key)){//오른쪽과 왼쪽중 큰수를 찾음
             child++;
         }
         if(temp.key>=h->heap[child].key){
@@ -49,7 +49,7 @@ element delete_max_heap(HeapType *h){
         }
         h->heap[parent] = h->heap[child];
         parent = child;
-        child/=2;
+        child*=2;
     }
     h->heap[parent] = temp;
     return item;
